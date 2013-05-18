@@ -3,7 +3,7 @@
         return a < b;
     }
 
-    var jsheap = function(cmp) {
+    var jsheap = global.jsheap = function(cmp) {
         //Compare function
         this.cmp = cmp || default_cmp;
 
@@ -17,7 +17,7 @@
         heap[b] = tmp;
     }
 
-    global.jsheap.prototype.push = function(item) {
+    jsheap.prototype.push = function(item) {
         var heap = this.heap;
         var cmp = this.cmp;
         var i = heap.length;
@@ -31,11 +31,11 @@
         return this;
     };
 
-    global.jsheap.prototype.top = function() {
+    jsheap.prototype.top = function() {
         return this.heap[1];
     };
 
-    global.jsheap.prototype.pop = function() {
+    jsheap.prototype.pop = function() {
         var heap = this.heap;
         var cmp = this.cmp;
         var i;
@@ -59,7 +59,7 @@
         return this;
     };
 
-    global.jsheap.prototype.empty = function() {
+    jsheap.prototype.empty = function() {
         return this.heap.length <= 1;
     };
 })(this);
