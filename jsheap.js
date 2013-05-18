@@ -36,11 +36,12 @@
     };
 
     jsheap.prototype.pop = function() {
+        if(this.empty()) throw 'heap is empty';
         var heap = this.heap;
         var cmp = this.cmp;
         var i;
         var item = heap.pop();
-        if(this.empty()) return this;
+
         i = 1;
         heap[1] = item;
 
