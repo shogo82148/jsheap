@@ -41,13 +41,14 @@
         var cmp = this.cmp;
         var i;
         var item = heap.pop();
+        var length = heap.length;
 
         i = 1;
         heap[1] = item;
 
-        while(i*2 < heap.length) {
+        while(i*2 < length) {
             var j = i*2;
-            if(j+1 < heap.length && cmp(heap[j+1], heap[j])) {
+            if(j+1 < length && cmp(heap[j+1], heap[j])) {
                 ++j;
             }
             if(!cmp(heap[j], heap[i])) {
