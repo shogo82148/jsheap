@@ -42,6 +42,7 @@
         var i;
         var item = heap.pop();
         var length = heap.length;
+        if(length == 1) return this;
 
         i = 1;
         heap[1] = item;
