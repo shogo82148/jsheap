@@ -21,10 +21,10 @@
         var heap = this.heap;
         var cmp = this.cmp;
         var i = heap.length;
+        var j;
 
         heap.push(item);
-        while(i>1 && cmp(heap[i], heap[Math.floor(i/2)])) {
-            var j = Math.floor(i/2);
+        while(i>1 && cmp(heap[i], heap[ j = i/2 | 0 ])) {
             swap(heap, i, j);
             i = j;
         }
