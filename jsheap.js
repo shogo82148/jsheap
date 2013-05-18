@@ -1,14 +1,16 @@
 (function(global) {
-	global.jsheap = function(cmp) {
-		//Compare function
-		this.cmp = cmp || function(a, b) {
-			return a<b;
-		};
-		
-		// heap[0] is dummpy
-		this.heap = [null];
-	};
-	
+    function default_cmp(a, b) {
+        return a < b;
+    }
+
+    global.jsheap = function(cmp) {
+        //Compare function
+        this.cmp = cmp || default_cmp;
+
+        // heap[0] is dummpy
+        this.heap = [null];
+    };
+
 	function swap(heap, a, b) {
 		var tmp = heap[a];
 		heap[a] = heap[b];
